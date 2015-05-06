@@ -1,4 +1,4 @@
-package test;
+
 
 import static org.junit.Assert.*;
 import org.junit.After;
@@ -9,10 +9,11 @@ import org.junit.Test;
 
 public class TestRomertal {
   
+
     @Test
     public void ikkeMereEndFireI(){
-      Romertal romertal = new Romertal(II, III);
+      Romertal romertal = new Romertal ("II", "III");
     
-      assertEquals("V", romertal.getFaceit());
+      assertEquals("V", romertal.sV);
     }
 }

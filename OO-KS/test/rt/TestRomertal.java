@@ -15,4 +15,11 @@ public class TestRomertal {
     
       assertEquals("V", romertal.getFaceit());
     }
+    
+    @Test
+    public void ikkeMereEndEnV(){
+      Romertal romertal = new Romertal("V", "V");
+    
+      assertEquals("X", romertal.getFaceit());
+    }
 }

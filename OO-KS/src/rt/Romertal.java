@@ -106,7 +106,7 @@ public class Romertal {
         sbD.delete( 0, 2 );
         sbM.delete( 0, 5 );
         
-        sbM.append( "Ugyldig Input" );
+        sbM.append( "Ugyldigt Input" );
       }
     }
   }

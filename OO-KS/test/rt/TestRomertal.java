@@ -52,7 +52,7 @@ public class TestRomertal {
     }
     
     @Test
-    public void testAfforHøjtInput(){
+    public void testAfForHøjtInput(){
       Romertal romertal = new Romertal("MMMM", "DD");
     
       assertEquals("Ugyldigt Input", romertal.getFaceit());

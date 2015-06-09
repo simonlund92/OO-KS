@@ -2,7 +2,7 @@ package rt;
 
 public class Romertal {
   private String a, b, c;
-  private StringBuilder sb = new StringBuilder( "" );
+  private StringBuilder sbSamlet = new StringBuilder( "" );
   private StringBuilder sbI = new StringBuilder( "" );
   private StringBuilder sbV = new StringBuilder( "" );
   private StringBuilder sbX = new StringBuilder( "" );
@@ -23,7 +23,8 @@ public class Romertal {
     getL();
     getC();
     getD();
-    return sb.append( sbX ).append( sbV ).append( sbI ).append(sbL).append(sbC).append( sbD ).append(sbM).toString();
+    getM();
+    return sbSamlet.append( sbI ).append( sbV ).append( sbX ).append(sbL).append(sbC).append( sbD ).append(sbM).toString();
   }
 
   private void getV() {
@@ -51,10 +52,10 @@ public class Romertal {
   private void getX() {
     for ( int i = 0; i < c.length(); i++ ) {
       if ( c.charAt( i ) == 'X' )
-        sbV.append( "X" );
-      if ( sbV.indexOf( "XXXXX" ) == 0 ) {
-        sbV.delete( 0, 5 );
-        sbX.append( "L" );
+        sbX.append( "X" );
+      if ( sbX.indexOf( "XXXXX" ) == 0 ) {
+        sbX.delete( 0, 5 );
+        sbL.append( "L" );
       }
     }
   }
@@ -62,10 +63,10 @@ public class Romertal {
   private void getL() {
     for ( int i = 0; i < c.length(); i++ ) {
       if ( c.charAt( i ) == 'L' )
-        sbV.append( "L" );
-      if ( sbV.indexOf( "LL" ) == 0 ) {
-        sbV.delete( 0, 2 );
-        sbX.append( "C" );
+        sbL.append( "L" );
+      if ( sbL.indexOf( "LL" ) == 0 ) {
+        sbL.delete( 0, 2 );
+        sbC.append( "C" );
       }
     }
   }
@@ -73,10 +74,10 @@ public class Romertal {
   private void getC() {
     for ( int i = 0; i < c.length(); i++ ) {
       if ( c.charAt( i ) == 'C' )
-        sbV.append( "C" );
-      if ( sbV.indexOf( "CCCCC" ) == 0 ) {
-        sbV.delete( 0, 5 );
-        sbX.append( "D" );
+        sbC.append( "C" );
+      if ( sbC.indexOf( "CCCCC" ) == 0 ) {
+        sbC.delete( 0, 5 );
+        sbD.append( "D" );
       }
     }
   }
@@ -84,10 +85,28 @@ public class Romertal {
   private void getD() {
     for ( int i = 0; i < c.length(); i++ ) {
       if ( c.charAt( i ) == 'D' )
-        sbV.append( "D" );
-      if ( sbV.indexOf( "DD" ) == 0 ) {
+        sbD.append( "D" );
+      if ( sbD.indexOf( "DD" ) == 0 ) {
+        sbD.delete( 0, 2 );
+        sbM.append( "M" );
+      }
+    }
+  }
+  
+  private void getM() {
+    for ( int i = 0; i < c.length(); i++ ) {
+      if ( c.charAt( i ) == 'M' )
+        sbM.append( "M" );
+      if ( sbM.indexOf( "MMMMM" ) == 0 ) {
+        sbI.delete( 0, 5 );
         sbV.delete( 0, 2 );
-        sbX.append( "M" );
+        sbX.delete( 0, 5 );
+        sbL.delete( 0, 2 );
+        sbC.delete( 0, 5 );
+        sbD.delete( 0, 2 );
+        sbM.delete( 0, 5 );
+        
+        sbM.append( "Ugyldig Input" );
       }
     }
   }

@@ -6,6 +6,7 @@ public class Romertal {
   private StringBuilder sbI = new StringBuilder( "" );
   private StringBuilder sbV = new StringBuilder( "" );
   private StringBuilder sbX = new StringBuilder( "" );
+  private StringBuilder sbL = new StringBuilder( "" );
 
   public Romertal( String a, String b ) {
     this.a = a;
@@ -16,8 +17,8 @@ public class Romertal {
   public String getFaceit() {
     getI();
     getV();
-
-    return sb.append( sbX ).append( sbV ).append( sbI ).toString();
+    getX();
+    return sb.append( sbX ).append( sbV ).append( sbI ).append(sbL).toString();
   }
 
   private void getV() {
@@ -45,5 +46,17 @@ public class Romertal {
     }
 
   }
+  
+  private void getX() {
+    for ( int i = 0; i < c.length(); i++ ) {
+      if ( c.charAt( i ) == 'X' )
+        sbV.append( "X" );
+      if ( sbV.indexOf( "XXXXX" ) == 0 ) {
+        sbV.delete( 0, 5 );
+        sbX.append( "L" );
+      }
 
+    }
+
+  }
 }

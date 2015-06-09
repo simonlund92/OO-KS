@@ -22,4 +22,11 @@ public class TestRomertal {
     
       assertEquals("X", romertal.getFaceit());
     }
+    
+    @Test
+    public void ikkeMereEndFireX(){
+      Romertal romertal = new Romertal("XX", "XXX");
+    
+      assertEquals("L", romertal.getFaceit());
+    }
 }

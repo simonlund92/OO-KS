@@ -9,7 +9,7 @@ public class Romertal {
   private StringBuilder sbL = new StringBuilder( "" );
   private StringBuilder sbC = new StringBuilder( "" );
   private StringBuilder sbD = new StringBuilder( "" );
-  
+  private StringBuilder sbM = new StringBuilder( "" );
   public Romertal( String a, String b ) {
     this.a = a;
     this.b = b;
@@ -22,7 +22,8 @@ public class Romertal {
     getX();
     getL();
     getC();
-    return sb.append( sbX ).append( sbV ).append( sbI ).append(sbL).append(sbC).append( sbD ).toString();
+    getD();
+    return sb.append( sbX ).append( sbV ).append( sbI ).append(sbL).append(sbC).append( sbD ).append(sbM).toString();
   }
 
   private void getV() {
@@ -79,4 +80,16 @@ public class Romertal {
       }
     }
   }
+  
+  private void getD() {
+    for ( int i = 0; i < c.length(); i++ ) {
+      if ( c.charAt( i ) == 'D' )
+        sbV.append( "D" );
+      if ( sbV.indexOf( "DD" ) == 0 ) {
+        sbV.delete( 0, 2 );
+        sbX.append( "M" );
+      }
+    }
+  }
+
 }

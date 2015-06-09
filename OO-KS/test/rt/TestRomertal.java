@@ -43,5 +43,19 @@ public class TestRomertal {
     
       assertEquals("D", romertal.getFaceit());
     }
+    
+    @Test
+    public void ikkeMereEndEnD(){
+      Romertal romertal = new Romertal("D", "D");
+    
+      assertEquals("M", romertal.getFaceit());
+    }
+    
+    @Test
+    public void testAfforHøjtInput(){
+      Romertal romertal = new Romertal("MMMMDCCCCLXXXXVIIII", "I");
+    
+      assertEquals("Ugyldigt Input", romertal.getFaceit());
+    }
 
 }

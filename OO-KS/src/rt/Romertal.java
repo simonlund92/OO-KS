@@ -8,7 +8,8 @@ public class Romertal {
   private StringBuilder sbX = new StringBuilder( "" );
   private StringBuilder sbL = new StringBuilder( "" );
   private StringBuilder sbC = new StringBuilder( "" );
-
+  private StringBuilder sbD = new StringBuilder( "" );
+  
   public Romertal( String a, String b ) {
     this.a = a;
     this.b = b;
@@ -20,7 +21,8 @@ public class Romertal {
     getV();
     getX();
     getL();
-    return sb.append( sbX ).append( sbV ).append( sbI ).append(sbL).append(sbC).toString();
+    getC();
+    return sb.append( sbX ).append( sbV ).append( sbI ).append(sbL).append(sbC).append( sbD ).toString();
   }
 
   private void getV() {
@@ -31,9 +33,7 @@ public class Romertal {
         sbV.delete( 0, 2 );
         sbX.append( "X" );
       }
-
     }
-
   }
 
   private void getI() {
@@ -44,9 +44,7 @@ public class Romertal {
         sbI.delete( 0, 5 );
         sbV.append( "V" );
       }
-
     }
-
   }
   
   private void getX() {
@@ -57,9 +55,7 @@ public class Romertal {
         sbV.delete( 0, 5 );
         sbX.append( "L" );
       }
-
     }
-
   }
   
   private void getL() {
@@ -70,9 +66,17 @@ public class Romertal {
         sbV.delete( 0, 2 );
         sbX.append( "C" );
       }
-
     }
-
   }
 
+  private void getC() {
+    for ( int i = 0; i < c.length(); i++ ) {
+      if ( c.charAt( i ) == 'C' )
+        sbV.append( "C" );
+      if ( sbV.indexOf( "CCCCC" ) == 0 ) {
+        sbV.delete( 0, 5 );
+        sbX.append( "D" );
+      }
+    }
+  }
 }

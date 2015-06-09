@@ -29,4 +29,11 @@ public class TestRomertal {
     
       assertEquals("L", romertal.getFaceit());
     }
+    
+    @Test
+    public void ikkeMereEndEnL(){
+      Romertal romertal = new Romertal("L", "L");
+    
+      assertEquals("C", romertal.getFaceit());
+    }
 }

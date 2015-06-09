@@ -17,6 +17,10 @@ public class Romertal {
   }
 
   public String getFaceit() {
+    
+    if(a =="" && b == "")
+      return "Ugyldigt Input";
+    
     getI();
     getV();
     getX();

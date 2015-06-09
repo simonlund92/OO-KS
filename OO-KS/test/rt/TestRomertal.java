@@ -57,5 +57,13 @@ public class TestRomertal {
     
       assertEquals("Ugyldigt Input", romertal.getFaceit());
     }
+    
+    @Test
+    public void testAfForLavtInput(){
+      Romertal romertal = new Romertal("", "");
+    
+      assertEquals("Ugyldigt Input", romertal.getFaceit());
+    }
+
 
 }

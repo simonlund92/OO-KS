@@ -36,4 +36,12 @@ public class TestRomertal {
     
       assertEquals("C", romertal.getFaceit());
     }
+    
+    @Test
+    public void ikkeMereEndFireC(){
+      Romertal romertal = new Romertal("CC", "CCC");
+    
+      assertEquals("D", romertal.getFaceit());
+    }
+
 }
